@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">-->
+    <meta name="format-detection" content="telephone=yes" />
+    <link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<body>
+<div id="root"></div>
+<script src="./vendor.dll.js"></script>
+<script src="https://cstaticdun.126.net/load.min.js" ></script>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=1gK4Nn8yLW1eMFX1qwkZ2aZ59tVyeGCD"></script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+
+<script type='text/javascript'>
+
+
+    define = null;
+    require = null;
+
+
+    /**
+     * antm-viewport.min.js 自动生成 meta name="viewport"
+     */
+    !function(e){function t(a){if(i[a])return i[a].exports;var n=i[a]={exports:{},id:a,loaded:!1};return e[a].call(n.exports,n,n.exports,t),n.loaded=!0,n.exports}var i={};return t.m=e,t.c=i,t.p="",t(0)}([function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=window;t["default"]=i.flex=function(e,t){var a=e||100,n=t||1,r=i.document,o=navigator.userAgent,d=o.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i),l=o.match(/U3\/((\d+|\.){5,})/i),c=l&&parseInt(l[1].split(".").join(""),10)>=80,p=navigator.appVersion.match(/(iphone|ipad|ipod)/gi),s=i.devicePixelRatio||1;p||d&&d[1]>534||c||(s=1);var u=1/s,m=r.querySelector('meta[name="viewport"]');m||(m=r.createElement("meta"),m.setAttribute("name","viewport"),r.head.appendChild(m)),m.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+u+",maximum-scale="+u+",minimum-scale="+u),r.documentElement.style.fontSize=a/2*s*n+"px"},e.exports=t["default"]}]);
+    flex(100, 1);
+    //注册事件监听
+    function connectWebViewJavascriptBridge(callback) {
+        if (window.WebViewJavascriptBridge) {
+            callback(WebViewJavascriptBridge)
+        } else {
+            document.addEventListener(
+                'WebViewJavascriptBridgeReady'
+                , function () {
+                    callback(WebViewJavascriptBridge)
+                },
+                false
+            );
+        }
+    }
+    //注册回调函数，第一次连接时调用 初始化函数
+    connectWebViewJavascriptBridge(function (bridge) {
+        //初始化
+        bridge.init(function (message, responseCallback) {
+            var data = {
+                'Javascript Responds': 'Wee!'
+            };
+            responseCallback(data);
+        });
+    });
+
+    var setupWebViewJavascriptBridge = function (callback) {
+        if (window.WebViewJavascriptBridge) {
+            return callback(WebViewJavascriptBridge);
+        }
+        if (window.WVJBCallbacks) {
+            return window.WVJBCallbacks.push(callback);
+        }
+        window.WVJBCallbacks = [callback];
+        var WVJBIframe = document.createElement('iframe');
+        WVJBIframe.style.display = 'none';
+        WVJBIframe.src = 'https://__bridge_loaded__';
+        document.documentElement.appendChild(WVJBIframe);
+        setTimeout(function () {
+            document.documentElement.removeChild(WVJBIframe)
+        }, 0)
+    };
+    var _vds = _vds || [];
+    window._vds = _vds;
+    (function(){
+        _vds.push(['setAccountId', '8bcf78f4293ef633']);
+        (function() {
+//                var vds = document.createElement('script');
+//                vds.type='text/javascript';
+//                vds.async = true;
+//                vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+//                var s = document.getElementsByTagName('script')[0];
+//                s.parentNode.insertBefore(vds, s);
+            //
+
+        })();
+    })();
+
+</script>
+
+</body>
+</html>

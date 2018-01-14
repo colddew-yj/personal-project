@@ -1,0 +1,48 @@
+.titleNav {
+  background: #ffffff;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  height: 2rem;
+  align-items: center;
+  padding-left: .75rem;
+  padding-right: .75rem;
+  border-bottom:1px solid #eeeeee;
+
+  a {
+    color: #333;
+    font-size: .75rem;
+    width: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  a:last-of-type{
+    position: relative;
+    top: -0.1rem;
+    align-items: flex-end;
+    white-space: nowrap;
+  }
+
+  a:active {
+    opacity: .8;
+  }
+  > span {
+    font-size: .85rem;
+    position: relative;
+    left: 0rem;
+    top: -.12rem;
+  }
+
+  > a:first-of-type > img {
+    width: .7rem;
+    margin-right: .25rem;
+  }
+  > a:first-of-type > span {
+    position: relative;
+    top: -.1rem;
+  }
+  > a:last-of-type > img {
+    width: .75rem;
+  }
+}

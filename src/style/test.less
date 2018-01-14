@@ -1,0 +1,51 @@
+@keyframes myfirst
+{
+  from {color: red;border-radius: 0px;}
+  to {color: yellow;border-radius:50px;transform:translate(0,20px) }
+}
+.test{
+  height: 100%;
+  .content{
+    height: 30px;
+    overflow: hidden;
+  }
+  .example-enter {
+    opacity: 0.5;
+    animation: myfirst 3s;
+    transform: translate(50px,100px);
+  }
+
+  .example-enter.example-enter-active {
+    opacity: 1;
+    transition: opacity 2000ms ease-in;
+    animation: myfirst 3s;
+  }
+
+  .example-leave {
+    opacity: 1;
+  }
+
+  .example-leave.example-leave-active {
+    opacity: 0.5;
+    transition: opacity 3000ms ease-in;
+  }
+  .c3{
+    width: 100px;
+    height: 100px;
+    background: darkred;
+    animation: myfirst 3s;
+    animation-iteration-count: infinite;
+    -webkit-transform-style: preserve-3d;
+    /*设置内嵌的元素在 3D 空间如何呈现：保留 3D*/
+    -webkit-backface-visibility: hidden;
+    /*（设置进行转换的元素的背面在面对用户时是否可见：隐藏）*/
+  }
+  .box{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    height: 40px;
+    background: steelblue;
+  }
+
+}
